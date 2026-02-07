@@ -10,12 +10,16 @@ function addDiv(target, x_size, y_size) {
     newDiv.style.minWidth = x_size + "px";
     newDiv.style.minHeight = y_size + "px";
     target.appendChild(newDiv);
+    return newDiv;
 }
 
 const container = document.querySelector("#container");
 
 for (let x_iter = 0; x_iter < x; x_iter ++) {
     for (let y_iter = 0; y_iter < y; y_iter ++) {
-        addDiv(container, x_size, y_size);
+        let newDiv = addDiv(container, x_size, y_size);
+        newDiv.addEventListener("pointerenter", (e) => {
+            newDiv.style.backgroundColor = "blue";
+        });
     }
 }
