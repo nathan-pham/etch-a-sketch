@@ -2,10 +2,14 @@ let grid_size = 16;
 let cell_size = 800/grid_size;
 
 function querySize() {
-    grid_size = prompt("MEOW!");
-    cell_size = 800/grid_size;
-    resetGrid(container);
-    setGrid(container);
+    do {
+        grid_size = prompt("What size do you want your Etch-A-Sketch to be? (1-100)");
+        cell_size = 800/grid_size;
+        resetGrid(container);
+        setGrid(container);
+    }
+    while (grid_size > 100 || grid_size < 1);
+
 }
 
 function addDiv(target, cell_size) {
