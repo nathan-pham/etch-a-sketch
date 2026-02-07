@@ -3,4 +3,5 @@
     max-width: 800px;
     max-height: 800px;
     flex-wrap: wrap;
+    border: 5px solid black;
 }
